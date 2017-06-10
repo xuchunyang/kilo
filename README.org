@@ -39,17 +39,21 @@
 
 两者的效果不一样，
 
-* TODO Raw input and output                                            :kilo:
+* DONE Raw input and output                                            :kilo:
+  CLOSED: [2017-06-10 Sat 23:10]
 
 ** ASCII 字符之间的转换
 
-ASCII 字符的序号有内在联系，方便转化，以 a 为例
+   ASCII 字符的序号有内在联系，方便转化，以 a 为例
 
-| C-a              | a                 | A                |
-|------------------+-------------------+------------------|
-| 1                | 97                | 65               |
-| 0000, 0001       | 0110, 0001        | 0100, 0001       |
-| a AND 0001,1111$ | C-a OR 0110, 0000 | a AND 1101, 1111 |
+   | C-a             | a                 | A                |
+   |-----------------+-------------------+------------------|
+   | 1               | 97                | 65               |
+   | 0000, 0001      | 0110, 0001        | 0100, 0001       |
+   | a AND 0001,1111 | C-a OR 0110, 0000 | a AND 1101, 1111 |
+
+   Control + Char 所得到的结果是把 Char 的第6、7位清掉，C-a 是 1；C-[
+   是 17，也是 ESC；C-m 是 13，也是 Enter，也是 \r；C-j 是 10，也是 \n。
 
 ** 使用 Escape sequence 控制终端 
    "ESC [" 是一个控制序列，在 C 语言中写作 "\x1b["，可以控制终端格式化、颜色、移动光标、清屏等。
@@ -63,3 +67,41 @@ ASCII 字符的序号有内在联系，方便转化，以 a 为例
    | H        | Cursor Position  | H (移动光标至起始位置，即 [1, 1])    |                                                  |
    | B        | Cursor Down      | 999B (把光标移动到最下方)            |                                                  |
    | C        | Cursor Forward   | 999C (把光标移动到最右方)            |                                                  |
+
+** Keys
+
+   | Key       | Code      | Laptop          |
+   |-----------+-----------+-----------------|
+   | a         | a (97)    |                 |
+   | C-a       | (1)       |                 |
+   | Page Up   | ESC [ 5 ~ | Fn + <up>[fn:1] |
+   | Page Down | ESC [ 6 ~ | Fn + <down>     |
+   | <up>      | ESC [ A   |                 |
+   | <down>    | ESC [ B   |                 |
+   | <right>   | ESC [ C   |                 |
+   | <left     | ESC [ D   |                 |
+   | RET       | \r (13)   |                 |
+   | C-j       | \n (10)   |                 |
+   | <home>    | ESC [ 1 ~ | Fn + <left>     |
+   | <home>    | ESC [ 7 ~ |                 |
+   | <home>    | ESC [ H   |                 |
+   | <home>    | ESC O H   |                 |
+   | <end>     | ESC [ 4 ~ | Fn + <right>    |
+   | <end>     | ESC [ 8 ~ |                 |
+   | <end>     | ESC [ F   |                 |
+   | <end>     | ESC O F   |                 |
+   | <del>     | ESC [ 3 ~ | Fn + Backspace  |
+
+
+** Mac 按键记法
+
+   | Command | ⌘ |
+   | Option  | ⌥ |
+   | Control | ⌃ |
+   | Shift   | ⇧ |
+   
+   参考 [[https://support.apple.com/en-us/HT201236][Mac keyboard shortcuts - Apple Support]]
+
+* Footnotes
+
+[fn:1] Terminal.app 似乎对 kilo.c 没效果？但其它的程序如 Emacs 是能正常接收到。换成 iTerm.app 却都没问题。
