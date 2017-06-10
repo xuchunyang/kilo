@@ -38,3 +38,28 @@
 ** TODO "\n" 输出时当作 "\r\n"，为什么不是 "\n\r"？
 
 两者的效果不一样，
+
+* TODO Raw input and output                                            :kilo:
+
+** ASCII 字符之间的转换
+
+ASCII 字符的序号有内在联系，方便转化，以 a 为例
+
+| C-a              | a                 | A                |
+|------------------+-------------------+------------------|
+| 1                | 97                | 65               |
+| 0000, 0001       | 0110, 0001        | 0100, 0001       |
+| a AND 0001,1111$ | C-a OR 0110, 0000 | a AND 1101, 1111 |
+
+** 使用 Escape sequence 控制终端 
+   "ESC [" 是一个控制序列，在 C 语言中写作 "\x1b["，可以控制终端格式化、颜色、移动光标、清屏等。
+
+   | Commands | Meaning          | Example                              | Document                                         |
+   |----------+------------------+--------------------------------------+--------------------------------------------------|
+   | h        | set mode         | ?25h (隐藏光标，Terminal.app 下无效) |                                                  |
+   | l        | reset mode       | ?25l (显示光标，Terminal.app 下无效) |                                                  |
+   | J        | Erase In Display | 2J (清屏)                            | [[http://vt100.net/docs/vt100-ug/chapter3.html#ED][Digital VT100 User Guide: Programmer Information]] |
+   | K        | Erase In Line    | K (清行，从光标处至行结束)           |                                                  |
+   | H        | Cursor Position  | H (移动光标至起始位置，即 [1, 1])    |                                                  |
+   | B        | Cursor Down      | 999B (把光标移动到最下方)            |                                                  |
+   | C        | Cursor Forward   | 999C (把光标移动到最右方)            |                                                  |
