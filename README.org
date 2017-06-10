@@ -5,3 +5,26 @@
 - main()
 - Compile
 - Makefile
+
+* TODO Entering raw mode                                               :kilo:
+
+- 终端默认使用 cannoical mode，在该模式下，用户输入 Enter 时才会把输入
+  发给程序 (line-by-line)
+- 如果终端被弄乱了，用 reset(1) 重置
+- 设置终端的模式： struct termios / tcgetattr / tcsetattr
+  - TCSAFLUSH
+  - ECHO
+  - ICANON, 关闭 canonical mode
+  - ISIG, 关闭 C-c 和 C-z
+  - IXON, 关闭 C-s 和 C-q
+  - IEXTEN，关闭 C-v
+  - ICRNL, 把 13 (\r) 映射成 10 (\n)
+- C-a 的编号是 1。M-a 的编号为 27 + 97（占 2 bytes），ESC 的编号是 27。
+  GUI 的 Emacs 也沿用这个规则：M-a 和 ESC a 效果一样。
+- RET 的编号是 10，j 是第 10 个字母，所以 C-j 也是 10。另外 C-m 也是
+  10。GUI Emacs 中这三个字符有时是两两通用的。
+- 按照规律，C-m 应该是 13，即 '\r'，但终端会把它当作 10 即 '\n'
+- C-s 告诉终端不接受输入，C-q 恢复。
+- C-z 会悬挂 (suspended) 运行中的程序，输入 fg 能恢复（不是所有的程序都可以）
+- C-c 会终止程序
+- C-v 会等待你再输入一个 byte
