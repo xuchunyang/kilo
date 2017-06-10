@@ -103,10 +103,12 @@
    
    参考 [[https://support.apple.com/en-us/HT201236][Mac keyboard shortcuts - Apple Support]]
 
-* TODO A text viewer
+* TODO A text viewer                                                   :kilo:
 
 - read a line from file using getline(3)
 - feature test macro
+
+** TODO "./kilo non_exist_file" 退出时为什么终端没能恢复？
 
 * Footnotes
 
