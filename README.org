@@ -197,6 +197,22 @@
 
 * TODO Syntax highlight                                                :kilo:
 
+| Code | Color                |
+|------+----------------------|
+|   34 | Blue                 |
+|   31 | Red                  |
+|   32 | Green                |
+|   33 | Yellow               |
+|   34 | Blue                 |
+|   35 | Magenta (品红，紫红) |
+|   36 | Cyan (青)            |
+|      |                      |
+|   39 | Default              |
+
+** TODO 搜索之后颜色是如何恢复的？
+
+   "Restore syntax highlighting after search"
+
 * TODO Customize it for myself                                         :kilo:
 ** TODO Use similiar key bindings like Emacs
    - C-g, cancel current operation
