@@ -59,15 +59,16 @@
 ** 使用 Escape sequence 控制终端 
    "ESC [" 是一个控制序列，在 C 语言中写作 "\x1b["，可以控制终端格式化、颜色、移动光标、清屏等。
 
-   | Commands | Meaning          | Example                              | Document                                         |
-   |----------+------------------+--------------------------------------+--------------------------------------------------|
-   | h        | set mode         | ?25h (隐藏光标，Terminal.app 下无效) |                                                  |
-   | l        | reset mode       | ?25l (显示光标，Terminal.app 下无效) |                                                  |
-   | J        | Erase In Display | 2J (清屏)                            | [[http://vt100.net/docs/vt100-ug/chapter3.html#ED][Digital VT100 User Guide: Programmer Information]] |
-   | K        | Erase In Line    | K (清行，从光标处至行结束)           |                                                  |
-   | H        | Cursor Position  | H (移动光标至起始位置，即 [1, 1])    |                                                  |
-   | B        | Cursor Down      | 999B (把光标移动到最下方)            |                                                  |
-   | C        | Cursor Forward   | 999C (把光标移动到最右方)            |                                                  |
+   | Commands | Meaning                  | Example                              | Document                                         |
+   |----------+--------------------------+--------------------------------------+--------------------------------------------------|
+   | h        | set mode                 | ?25h (隐藏光标，Terminal.app 下无效) |                                                  |
+   | l        | reset mode               | ?25l (显示光标，Terminal.app 下无效) |                                                  |
+   | J        | Erase In Display         | 2J (清屏)                            | [[http://vt100.net/docs/vt100-ug/chapter3.html#ED][Digital VT100 User Guide: Programmer Information]] |
+   | K        | Erase In Line            | K (清行，从光标处至行结束)           |                                                  |
+   | H        | Cursor Position          | H (移动光标至起始位置，即 [1, 1])    |                                                  |
+   | B        | Cursor Down              | 999B (把光标移动到最下方)            |                                                  |
+   | C        | Cursor Forward           | 999C (把光标移动到最右方)            |                                                  |
+   | m        | Select Graphic Rendition | 7m (反色), m(恢复)                   | [[http://vt100.net/docs/vt100-ug/chapter3.html#SGR][Digital VT100 User Guide: Programmer Information]] |
 
 ** Keys
 
