@@ -72,27 +72,29 @@
 
 ** Keys
 
-   | Key       | Code      | Laptop          |
-   |-----------+-----------+-----------------|
-   | a         | a (97)    |                 |
-   | C-a       | (1)       |                 |
-   | Page Up   | ESC [ 5 ~ | Fn + <up>[fn:1] |
-   | Page Down | ESC [ 6 ~ | Fn + <down>     |
-   | <up>      | ESC [ A   |                 |
-   | <down>    | ESC [ B   |                 |
-   | <right>   | ESC [ C   |                 |
-   | <left     | ESC [ D   |                 |
-   | RET       | \r (13)   |                 |
-   | C-j       | \n (10)   |                 |
-   | <home>    | ESC [ 1 ~ | Fn + <left>     |
-   | <home>    | ESC [ 7 ~ |                 |
-   | <home>    | ESC [ H   |                 |
-   | <home>    | ESC O H   |                 |
-   | <end>     | ESC [ 4 ~ | Fn + <right>    |
-   | <end>     | ESC [ 8 ~ |                 |
-   | <end>     | ESC [ F   |                 |
-   | <end>     | ESC O F   |                 |
-   | <del>     | ESC [ 3 ~ | Fn + Backspace  |
+   | Key       | Code      | Laptop          | Meaning                    |
+   |-----------+-----------+-----------------+----------------------------|
+   | a         | a (97)    |                 |                            |
+   | C-a       | (1)       |                 |                            |
+   | Page Up   | ESC [ 5 ~ | Fn + <up>[fn:1] |                            |
+   | Page Down | ESC [ 6 ~ | Fn + <down>     |                            |
+   | <up>      | ESC [ A   |                 |                            |
+   | <down>    | ESC [ B   |                 |                            |
+   | <right>   | ESC [ C   |                 |                            |
+   | <left     | ESC [ D   |                 |                            |
+   | RET       | \r (13)   |                 |                            |
+   | C-j       | \n (10)   |                 |                            |
+   | <home>    | ESC [ 1 ~ | Fn + <left>     |                            |
+   | <home>    | ESC [ 7 ~ |                 |                            |
+   | <home>    | ESC [ H   |                 |                            |
+   | <home>    | ESC O H   |                 |                            |
+   | <end>     | ESC [ 4 ~ | Fn + <right>    |                            |
+   | <end>     | ESC [ 8 ~ |                 |                            |
+   | <end>     | ESC [ F   |                 |                            |
+   | <end>     | ESC O F   |                 |                            |
+   | <del>     | ESC [ 3 ~ | Fn + Backspace  |                            |
+   | DEL       |           |                 | Delete a char at point     |
+   | Backspace | 127       |                 | Delete a char before point |
 
 
 ** Mac 按键记法
@@ -178,6 +180,10 @@
 * TODO A text editor
 
 - open/write/ftruncate, for saving file to disk
+
+** TODO 描述出 Backspace 和 Enter 究竟是如何工作的？
+
+   编辑器的各个状态是如何改变的？
 
 * Footnotes
 
