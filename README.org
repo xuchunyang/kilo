@@ -177,13 +177,16 @@
    Remember, we only refresh the screen after each keypress.
    #+END_QUOTE
 
-* TODO A text editor
+* DONE A text editor                                                   :kilo:
+  CLOSED: [2017-06-11 Sun 17:28]
 
 - open/write/ftruncate, for saving file to disk
 
 ** TODO 描述出 Backspace 和 Enter 究竟是如何工作的？
 
    编辑器的各个状态是如何改变的？
+
+* TODO Search                                                          :kilo:
 
 * TODO Customize it for myself                                         :kilo:
 ** TODO Use similiar key bindings like Emacs
