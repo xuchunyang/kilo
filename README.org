@@ -195,6 +195,8 @@
 
 ** TODO 增量搜索时，在搜索结果前后跳转是如何实现的？没完全明白
 
+* TODO Syntax highlight                                                :kilo:
+
 * TODO Customize it for myself                                         :kilo:
 ** TODO Use similiar key bindings like Emacs
    - C-g, cancel current operation
