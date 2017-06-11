@@ -110,6 +110,56 @@
 
 ** TODO "./kilo non_exist_file" 退出时为什么终端没能恢复？
 
+** TODO KILO_TAB_STOP 的意思不是 1 个 TAB 用 8 个 空格显示？
+
+   而是保证 TAB 显示之后，光标所在列的是 8 的整数倍。我一直没搞明白编辑器中 TAB 的问题。
+
+   E.cx 表示光标在当前行的 byte 数，E.rx 表示光标应该显示的位置。比如一行内容是 "a\t"，如果 cx = 2，那么 rx 就是 8？
+
+   #+BEGIN_SRC C :results output
+     #include <stdio.h>
+     #include <string.h>
+     #include <stdlib.h>
+
+     #define KILO_TAB_STOP 8
+
+     typedef struct erow {
+       char *chars;
+     } erow;
+
+     int editorRowCxToRx(erow *row, int cx) {
+       int rx = 0;
+       int j;
+       for (j = 0; j < cx; j++) {
+         if (row->chars[j] == '\t')
+           rx += (KILO_TAB_STOP - 1) - (rx % KILO_TAB_STOP);
+         rx++;
+       }
+       return rx;
+     }
+
+     int main() {
+       erow r1 = {NULL};
+       r1.chars = strdup ("ab\tc\td");
+       char *s = r1.chars;
+       for (int i = 0; i < strlen(r1.chars); i++) {
+         int cx = i;
+         int rx = editorRowCxToRx(&r1, cx);
+         printf("s = %s, cx = %d, rx = %d\n", s, cx, rx);
+       }
+       free(s);
+       return 0;
+     }
+   #+END_SRC
+
+   #+RESULTS:
+   : s = ab	c	d, cx = 0, rx = 0
+   : s = ab	c	d, cx = 1, rx = 1
+   : s = ab	c	d, cx = 2, rx = 2
+   : s = ab	c	d, cx = 3, rx = 8
+   : s = ab	c	d, cx = 4, rx = 9
+   : s = ab	c	d, cx = 5, rx = 16
+
 * Footnotes
 
 [fn:1] Terminal.app 似乎对 kilo.c 没效果？但其它的程序如 Emacs 是能正常接收到。换成 iTerm.app 却都没问题。
