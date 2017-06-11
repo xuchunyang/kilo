@@ -104,7 +104,8 @@
    
    参考 [[https://support.apple.com/en-us/HT201236][Mac keyboard shortcuts - Apple Support]]
 
-* TODO A text viewer                                                   :kilo:
+* DONE A text viewer                                                   :kilo:
+  CLOSED: [2017-06-11 Sun 15:18]
 
 - read a line from file using getline(3)
 - feature test macro
@@ -160,6 +161,19 @@
    : s = ab	c	d, cx = 3, rx = 8
    : s = ab	c	d, cx = 4, rx = 9
    : s = ab	c	d, cx = 5, rx = 16
+
+** TODO 描述出这个编辑器目前的工作流？
+
+   - 如何显示？
+   - 如何控制光标？
+   - 如何处理按键？
+   - 如何 Refresh 的？
+   - 使用了状态信息？
+   - Memory 使用？
+
+   #+BEGIN_QUOTE
+   Remember, we only refresh the screen after each keypress.
+   #+END_QUOTE
 
 * Footnotes
 
