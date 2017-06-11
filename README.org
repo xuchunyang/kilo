@@ -186,14 +186,21 @@
 
    编辑器的各个状态是如何改变的？
 
-* TODO Search                                                          :kilo:
+* DONE Search                                                          :kilo:
+  CLOSED: [2017-06-11 Sun 19:38]
+
+1. 简单搜索：用户输入搜索词后，按 Enter 之后开始搜索；
+2. 增量搜索：用户输入的同时开始搜索，用 callback 实现，每次输入后多会
+   运行 callback 执行搜索，镖师搜索结果
+
+** TODO 增量搜索时，在搜索结果前后跳转是如何实现的？没完全明白
 
 * TODO Customize it for myself                                         :kilo:
 ** TODO Use similiar key bindings like Emacs
-
    - C-g, cancel current operation
    - C-n/C-p/C-b/C-f/C-a/C-e, move cursor
    - etc
+** TODO 如何完全恢复终端原先的状态？
 
 * Footnotes
 
