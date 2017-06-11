@@ -56,7 +56,7 @@
    Control + Char 所得到的结果是把 Char 的第6、7位清掉，C-a 是 1；C-[
    是 17，也是 ESC；C-m 是 13，也是 Enter，也是 \r；C-j 是 10，也是 \n。
 
-** 使用 Escape sequence 控制终端 
+** 使用 Escape sequence 控制终端
    "ESC [" 是一个控制序列，在 C 语言中写作 "\x1b["，可以控制终端格式化、颜色、移动光标、清屏等。
 
    | Commands | Meaning                  | Example                              | Document                                         |
@@ -103,7 +103,7 @@
    | Option  | ⌥ |
    | Control | ⌃ |
    | Shift   | ⇧ |
-   
+
    参考 [[https://support.apple.com/en-us/HT201236][Mac keyboard shortcuts - Apple Support]]
 
 * DONE A text viewer                                                   :kilo:
@@ -184,6 +184,13 @@
 ** TODO 描述出 Backspace 和 Enter 究竟是如何工作的？
 
    编辑器的各个状态是如何改变的？
+
+* TODO Customize it for myself                                         :kilo:
+** TODO Use similiar key bindings like Emacs
+
+   - C-g, cancel current operation
+   - C-n/C-p/C-b/C-f/C-a/C-e, move cursor
+   - etc
 
 * Footnotes
 
