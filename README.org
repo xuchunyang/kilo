@@ -175,6 +175,7 @@
    Remember, we only refresh the screen after each keypress.
    #+END_QUOTE
 
+* TODO A text editor
 * Footnotes
 
 [fn:1] Terminal.app 似乎对 kilo.c 没效果？但其它的程序如 Emacs 是能正常接收到。换成 iTerm.app 却都没问题。
