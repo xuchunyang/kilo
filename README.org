@@ -195,7 +195,8 @@
 
 ** TODO 增量搜索时，在搜索结果前后跳转是如何实现的？没完全明白
 
-* TODO Syntax highlight                                                :kilo:
+* DONE Syntax highlight                                                :kilo:
+  CLOSED: [2017-06-12 Mon 08:02]
 
 | Code | Color                |
 |------+----------------------|
