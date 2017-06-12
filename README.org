@@ -215,6 +215,9 @@
    "Restore syntax highlighting after search"
 
 * TODO Customize it for myself                                         :kilo:
+
+  See also [[http://viewsourcecode.org/snaptoken/kilo/08.appendices.html#ideas-for-features-to-add-on-your-own][8. Appendices | Build Your Own Text Editor]]
+
 ** TODO Use similiar key bindings like Emacs
    - C-g, cancel current operation
    - C-n/C-p/C-b/C-f/C-a/C-e, move cursor
